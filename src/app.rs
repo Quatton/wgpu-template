@@ -82,7 +82,8 @@ impl ApplicationHandler<Graphics> for App {
         }
     }
 
-    fn user_event(&mut self, _event_loop: &ActiveEventLoop, graphics: Graphics) {
+    fn user_event(&mut self, _event_loop: &ActiveEventLoop, mut graphics: Graphics) {
+        graphics.draw();
         self.state = State::Ready(graphics);
     }
 }
